@@ -1,0 +1,175 @@
+@import "./variables.scss";
+
+.drawer {
+    display: flex;
+    width: 300px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+
+    flex-direction: column;
+}
+
+.drawer-menu {
+    margin: 5px;
+    margin-bottom: 0px;
+
+    background-color: lighten($PRIMARY, 10%);
+    border-radius: 5px;
+
+    &:hover {
+        background-color: lighten($PRIMARY, 0%);
+    }
+
+    .drawer-menu-heading-wrapper {
+        padding: 6px 10px 6px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: medium;
+        color: white;
+        cursor: pointer;
+
+        .drawer-menu-icon {
+            font-size: medium;
+            transition: 0.1s ease;
+        }
+
+        .drawer-menu-heading {
+            user-select: none;
+        }
+    }
+
+    .drawer-menu-panel {
+        background-color: white;
+        margin: 0px;
+        overflow: hidden;
+
+        .drawer-submenu {
+            margin: 0px 0px 0px 0px;
+
+            font-size: x;
+            user-select: none;
+            background-color: $SECONDARY;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($SECONDARY, 10%);
+            }
+
+            .drawer-submenu-heading-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2px 7px 2px 7px;
+                margin-bottom: 1px;
+                
+
+                .drawer-submenu-heading {
+                    padding: 0px;
+                }
+
+                .drawer-submenu-icon {
+                    font-size: x-small;
+                }
+            }
+
+            .submenu-content {
+                position: absolute;
+                width: 100%;
+                top: 0px;
+                height: 100%;
+                
+
+                background-color: $PRIMARY_TINT;
+                display: flex;
+                flex-direction: column;
+                cursor: default;
+
+                .submenu-content-header-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 7px 15px 7px 15px;
+                    background-color: $SECONDARY;
+                    box-shadow: 0px 0px 10px 0px;
+                    z-index: 10;
+
+                    .submenu-content-icon {
+                        font-size: small;
+                    }
+
+                    .submenu-content-header {
+                        font-size: medium;
+                    }
+
+                    &:hover {
+                        background-color: darken($SECONDARY, 10%);
+                        cursor: pointer;
+                    }
+                }
+
+                .submenu-content-content{
+                    padding-top: 5px;
+                    padding-bottom: 10px;
+                    overflow-y: auto;
+
+
+                }
+            }
+        }
+    }
+}
+
+.rotated {
+    rotate: 180deg;
+}
+
+//Submenu items content transition
+
+.submenu-content-enter {
+    left: 100%;
+}
+.submenu-content-enter-active {
+    left: 0%;
+    transition: 0.15s ease;
+}
+
+.submenu-content-enter-done {
+    left: 0px;
+}
+
+.submenu-content-exit {
+    left: 0%;
+}
+.submenu-content-exit-active {
+    left: 100%;
+    transition: 0.15s ease;
+}
+
+//Submenu items transition
+
+.drawer-menu-panel-enter {
+    max-height: 0px;
+    //opacity: 0;
+}
+.drawer-menu-panel-enter-active {
+    //opacity: 1;
+    transition: 0.15s ease;
+    max-height: 300px;
+}
+
+.drawer-menu-panel-enter-done {
+    max-height: 300px;
+}
+
+.drawer-menu-panel-exit {
+    max-height: 300px;
+
+    //opacity: 1;
+}
+.drawer-menu-panel-exit-active {
+    max-height: 0px;
+    //opacity: 0;
+    transition: 0.15s ease;
+}

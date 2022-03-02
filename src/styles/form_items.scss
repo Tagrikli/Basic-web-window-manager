@@ -1,0 +1,82 @@
+@import "./variables.scss";
+
+.form-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 5px 4px 5px;
+    margin: 5px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    background-color: white;
+
+    .form-item-label {
+        font-size: x-small;
+        font-weight: bolder;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100px;
+
+        &:hover {
+            background-color: white;
+            overflow: visible;
+        }
+    }
+
+    .form-input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input{
+            margin-right: 5px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-radius: 4px;
+            width: 100px;
+            &:hover {
+                background-color: darken(white, 10%);
+            }
+        }
+
+        input[type="checkbox"] {
+            border: none;
+            border-radius: 4px;
+            &:hover {
+                background-color: darken(white, 10%);
+                width: auto;
+            }
+        }
+
+        .form-icons-wrapper {
+            display: flex;
+
+            .fa-check,
+            .fa-xmark {
+                transition: 0.15s ease;
+                height: 13px;
+                width: 13px;
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            .fa-check:hover {
+                background-color: $SUCCESS;
+            }
+            .fa-xmark:hover {
+                background-color: $DANGER;
+            }
+
+            .fa-icon-disabled {
+                opacity: 0.4;
+                pointer-events: none;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

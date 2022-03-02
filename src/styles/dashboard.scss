@@ -1,0 +1,52 @@
+@import "./common.scss";
+@import "./variables.scss";
+
+.dashboard {
+    background-color: white;
+    height: 100%;
+    flex: 1;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 0px;
+
+    .panel-handle {
+        cursor: grab;
+        height: 20px;
+        background-color: $SECONDARY;
+        box-shadow: 0px 0px 5px 0px;
+        z-index: 1;
+
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
+        .action-icon-group {
+            cursor: default;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3px;
+
+            .action-icon {
+                font-weight: 100;
+                font-size: 13px;
+                cursor: pointer;
+                padding: 3px 3px 3px 3px;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: darken($SECONDARY, 10%);
+                }
+            }
+        }
+    }
+    .panel-content {
+        flex: 1;
+        background-color: $PRIMARY-TINT;
+    }
+}

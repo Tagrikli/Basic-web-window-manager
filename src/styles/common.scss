@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+.rotated-180{
+    transform: rotate(180deg);
+}
+
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $PRIMARY;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $SECONDARY;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $PRIMARY_TINT;
+  } 
